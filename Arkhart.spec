@@ -135,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files 
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/widgettest
 %attr(755,root,root) %{_libdir}/libArk*.so.*.*.*
