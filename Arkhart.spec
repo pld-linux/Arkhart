@@ -71,11 +71,11 @@ Group:		Games
 #%patch0 -p0
 
 %build
-#./configure \
-#	--with-lua-lib=/usr/lib \
-#	--with-lua-inc=/usr/include \
-#	--with-gl-libs=/usr/X11R6/lib \
-#	--with-gl-inc=/usr/X11R6/include
+./configure \
+	--with-lua-lib=/usr/lib \
+	--with-lua-inc=/usr/include \
+	--with-gl-libs=/usr/X11R6/lib \
+	--with-gl-inc=/usr/X11R6/include
 
 %{__make}
 
@@ -83,16 +83,18 @@ Group:		Games
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT prefix=/usr install
 
-#%find_lang %{name}
+%post -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(644,root,root,755)
-%doc README,COPYING,INSTALL,TODO,ChangeLog
 %attr(755,root,root) %{_bindir}/ark-config
+%attr(755,root,root) %{_bindir}/widgettest
 %attr(644,root,root) %{_libdir}/libArk*.so.*.*.*
+%attr(644,root,root) %{_libdir}/libArk*.la
 
 %files client
 %attr(755,root,root) %{_bindir}/arkclient
