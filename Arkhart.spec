@@ -119,9 +119,7 @@ ln -s ../ltmain.sh .
 cd ..
 %configure \
 	--with-lua-lib=/usr/lib \
-	--with-lua-inc=/usr/include \
-	--with-gl-libs=/usr/X11R6/lib \
-	--with-gl-inc=/usr/X11R6/include
+	--with-lua-inc=/usr/include/lua40
 
 %{__make}
 
