@@ -1,18 +1,21 @@
+#%define		editor_ver	0.1.3
 Summary:	Arkhart - A multiplayer roleplaying game
 Summary(pl):	Arkhart - wieloosobowa gra fabularna
 Name:		Arkhart
-Version:	0.1.3
+Version:	0.1.4
 Release:	1
 License:	GPL
 Group:		Applications/Games
 Source0:	http://arkhart.nekeme.net/download/releases/ark-%{version}.tar.gz
-# Source0-md5:	f9223aeb94abd6aaf9f222c459b3fffe
+# Source0-md5:	c0f6049108351543372a6055238d12c6
 Source1:	http://arkhart.nekeme.net/download/releases/Arkhart-data-%{version}.tar.gz
-# Source1-md5:	281956a71ba7a094947dd26e202963c5
-Source2:	http://arkhart.nekeme.net/download/releases/worlded-%{version}.tar.gz
+# Source1-md5:	82a208fc82f3cd57c6a78a258336e9db
+Source2:	http://arkhart.nekeme.net/download/releases/worlded-%{editor_ver}.tar.gz
 # Source2-md5:	0fb9cc39c01e024b4b69dfd1eb394f71
 URL:		http://arkhart.nekeme.net/en/?name=Home
 BuildRequires:	SDL_mixer-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	lua40-devel >= 4.0.1
@@ -99,7 +102,21 @@ Edytor ¶wiatów dla gry Arkhart.
 %build
 CPPFLAGS="-I/usr/X11R6/include"
 LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
-%configure2_13 \
+rm -f missing
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+cd libltdl
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+ln -s ../ltmain.sh .
+%{__automake}
+cd ..
+%configure \
 	--with-lua-lib=/usr/lib \
 	--with-lua-inc=/usr/include \
 	--with-gl-libs=/usr/X11R6/lib \
