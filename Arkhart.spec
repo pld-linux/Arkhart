@@ -6,8 +6,11 @@ Release:	1
 License:	GPL
 Group:		Applications/Games
 Source0:	http://arkhart.nekeme.net/download/releases/ark-%{version}.tar.gz
+# Source0-md5:	f9223aeb94abd6aaf9f222c459b3fffe
 Source1:	http://arkhart.nekeme.net/download/releases/Arkhart-data-%{version}.tar.gz
+# Source1-md5:	281956a71ba7a094947dd26e202963c5
 Source2:	http://arkhart.nekeme.net/download/releases/worlded-%{version}.tar.gz
+# Source2-md5:	0fb9cc39c01e024b4b69dfd1eb394f71
 URL:		http://arkhart.nekeme.net/en/?name=Home
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	libjpeg-devel
