@@ -5,7 +5,7 @@ Name:		Arkhart
 Version:	0.1.4
 Release:	1
 License:	GPL
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Source0:	http://arkhart.nekeme.net/download/releases/ark-%{version}.tar.gz
 # Source0-md5:	c0f6049108351543372a6055238d12c6
 Source1:	http://arkhart.nekeme.net/download/releases/Arkhart-data-%{version}.tar.gz
@@ -32,7 +32,7 @@ Arkhart - wieloosobowa gra fabularna.
 %package data
 Summary:	Arkhart data
 Summary(pl):	Dane dla gry Arkhart
-Group:		Applications/Games
+Group:		X11/Applications/Games
 
 %description data
 Arkhart data.
@@ -43,7 +43,7 @@ Dane dla gry Arkhart.
 %package server
 Summary:	Arkhart server
 Summary(pl):	Serwer gry Arkhart
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}
 
 %description server
@@ -55,7 +55,7 @@ Serwer gry Arkhart.
 %package client
 Summary:	Arkhart client
 Summary(pl):	Klient gry Arkhart
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}
 
 %description client
@@ -89,7 +89,7 @@ Biblioteki statyczne dla gry Arkhart.
 %package WorldEd
 Summary:	Arkhart World editor
 Summary(pl):	Edytor ¶wiatów dla gry Arkhart
-Group:		Applications/Games
+Group:		X11/Applications/Games
 
 %description WorldEd
 Arkhart World editor.
