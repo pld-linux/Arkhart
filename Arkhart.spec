@@ -1,74 +1,97 @@
-Summary:	Arkhart - A multiplayer roleplaying game.
-Summary(pl):	Arkhart - wieloosobowa gra fabularna.
+Summary:	Arkhart - A multiplayer roleplaying game
+Summary(pl):	Arkhart - wieloosobowa gra fabularna
 Name:		Arkhart
 Version:	0.1.3
 Release:	1
 License:	GPL
-Group:		Games
+Group:		Applications/Games
 Source0:	http://arkhart.nekeme.net/download/releases/ark-%{version}.tar.gz
 Source1:	http://arkhart.nekeme.net/download/releases/Arkhart-data-%{version}.tar.gz
 Source2:	http://arkhart.nekeme.net/download/releases/worlded-%{version}.tar.gz
 URL:		http://arkhart.nekeme.net/en/?name=Home
-#Patch0:		
-BuildRequires:	lua40-devel >= 4.0.1
 BuildRequires:	SDL_mixer-devel
-BuildRequires:	zlib-devel
-BuildRequires:	libpng-devel
 BuildRequires:	libjpeg-devel
-#BuildRequires:	-devel
+BuildRequires:	libpng-devel
+BuildRequires:	lua40-devel >= 4.0.1
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+Arkhart - A multiplayer roleplaying game.
 
 %description -l pl
+Arkhart - wieloosobowa gra fabularna.
 
 %package data
 Summary:	Arkhart data
 Summary(pl):	Dane dla gry Arkhart
-Group:		Games
+Group:		Applications/Games
+
 %description data
-%description -l pl data
+Arkhart data.
+
+%description data -l pl
+Dane dla gry Arkhart.
 
 %package server
 Summary:	Arkhart server
 Summary(pl):	Serwer gry Arkhart
-Group:		Games
-Requires:	%{name}
+Group:		Applications/Games
+Requires:	%{name} = %{version}
+
 %description server
-%description -l pl server
+Arkhart server.
+
+%description server -l pl
+Serwer gry Arkhart.
 
 %package client
 Summary:	Arkhart client
 Summary(pl):	Klient gry Arkhart
-Group:		Games
-Requires:	%{name}
+Group:		Applications/Games
+Requires:	%{name} = %{version}
+
 %description client
-%description -l pl client
+Arkhart client.
+
+%description client -l pl
+Klient gry Arkhart.
 
 %package devel
 Summary:	Arkhart program library headers
-Summary(pl):	Pliki naglowkowe gry Arkhart
-Group:		Games
+Summary(pl):	Pliki nag³ówkowe gry Arkhart
+Group:		Development/Libraries
+
 %description devel
-%description -l pl devel
+Arkhart program library headers.
+
+%description devel -l pl
+Pliki nag³ówkowe gry Arkhart.
 
 %package static
-Summary:	Static library for Arjhart games
+Summary:	Static library for Arkhart games
 Summary(pl):	Biblioteki statyczne dla gry Arkhart
-Group:		Games
+Group:		Development/Libraries
+
 %description static
-%description -l pl static
+Static library for Arkhart games.
+
+%description static -l pl
+Biblioteki statyczne dla gry Arkhart.
 
 %package WorldEd
 Summary:	Arkhart World editor
-Summary(pl):	Edytor swiatow dla gry Arkhart
-Group:		Games
+Summary(pl):	Edytor ¶wiatów dla gry Arkhart
+Group:		Applications/Games
+
 %description WorldEd
-%description -l pl WorldEd
+Arkhart World editor.
+
+%description WorldEd -l pl
+Edytor ¶wiatów dla gry Arkhart.
 
 %prep
 %setup -q -n Ark
-#%patch0 -p0
 
 %build
 ./configure \
@@ -81,33 +104,40 @@ Group:		Games
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT prefix=/usr install
-
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	prefix=%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files 
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ark-config
 %attr(755,root,root) %{_bindir}/widgettest
-%attr(644,root,root) %{_libdir}/libArk*.so.*.*.*
-%attr(644,root,root) %{_libdir}/libArk*.la
+%attr(755,root,root) %{_libdir}/libArk*.so.*.*.*
 
 %files client
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/arkclient
 
-%files data
+#%files data
 
 %files devel
-%attr(644,root,root) %{_includedir}/Ark/*
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libArk*.so
+%{_libdir}/libArk*.la
+%{_includedir}/Ark
 
 %files static
-%attr(644,root,root) %{_libdir}/*.a
+%defattr(644,root,root,755)
+%{_libdir}/*.a
 
-%files WorldEd
+#%files WorldEd
 
 %files server
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/arkhartd
