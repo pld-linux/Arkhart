@@ -1,4 +1,4 @@
-#%define		editor_ver	0.1.3
+%define		editor_ver	0.1.3
 Summary:	Arkhart - A multiplayer roleplaying game
 Summary(pl):	Arkhart - wieloosobowa gra fabularna
 Name:		Arkhart
