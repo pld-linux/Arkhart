@@ -44,7 +44,7 @@ Dane dla gry Arkhart.
 Summary:	Arkhart server
 Summary(pl):	Serwer gry Arkhart
 Group:		X11/Applications/Games
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description server
 Arkhart server.
@@ -56,7 +56,7 @@ Serwer gry Arkhart.
 Summary:	Arkhart client
 Summary(pl):	Klient gry Arkhart
 Group:		X11/Applications/Games
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description client
 Arkhart client.
@@ -68,6 +68,7 @@ Klient gry Arkhart.
 Summary:	Arkhart program library headers
 Summary(pl):	Pliki nag³ówkowe gry Arkhart
 Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Arkhart program library headers.
@@ -79,6 +80,7 @@ Pliki nag³ówkowe gry Arkhart.
 Summary:	Static library for Arkhart games
 Summary(pl):	Biblioteki statyczne dla gry Arkhart
 Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static library for Arkhart games.
@@ -102,7 +104,7 @@ Edytor ¶wiatów dla gry Arkhart.
 
 %build
 CPPFLAGS="-I/usr/X11R6/include"
-LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
+LDFLAGS="%{rpmldflags} -L/usr/X11R6/%{_lib}"
 rm -f missing
 %{__libtoolize}
 %{__aclocal}
@@ -118,7 +120,7 @@ ln -s ../ltmain.sh .
 %{__automake}
 cd ..
 %configure \
-	--with-lua-lib=/usr/lib \
+	--with-lua-lib=/usr/%{_lib} \
 	--with-lua-inc=/usr/include/lua40
 
 %{__make}
