@@ -1,13 +1,13 @@
 Summary:	Arkhart - A multiplayer roleplaying game.
 Summary(pl):	Arkhart - wieloosobowa gra fabularna.
 Name:		Arkhart
-Version:	20030210
+Version:	0.1.3
 Release:	1
 License:	GPL
 Group:		Games
-Source0:	http://arkhart.nekeme.net/Tmp/Ark.tar.bz2
-Source1:	http://arkhart.nekeme.net/Tmp/Arkhart-data.tar.bz2
-Source2:	http://arkhart.nekeme.net/Tmp/Worlded.tar.bz2
+Source0:	http://arkhart.nekeme.net/download/releases/ark-%{version}.tar.gz
+Source1:	http://arkhart.nekeme.net/download/releases/Arkhart-data-%{version}.tar.gz
+Source2:	http://arkhart.nekeme.net/download/releases/worlded-%{version}.tar.gz
 URL:		http://arkhart.nekeme.net/en/?name=Home
 #Patch0:		
 BuildRequires:	lua40-devel >= 4.0.1
