@@ -91,10 +91,12 @@ Arkhart World editor.
 Edytor ¶wiatów dla gry Arkhart.
 
 %prep
-%setup -q -n Ark
+%setup -q -n ark-%{version}
 
 %build
-./configure \
+CPPFLAGS="-I/usr/X11R6/include"
+LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
+%configure2_13 \
 	--with-lua-lib=/usr/lib \
 	--with-lua-inc=/usr/include \
 	--with-gl-libs=/usr/X11R6/lib \
@@ -105,8 +107,7 @@ Edytor ¶wiatów dla gry Arkhart.
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	prefix=%{_prefix}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
