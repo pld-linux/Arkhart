@@ -116,7 +116,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/ark-config
 %attr(755,root,root) %{_bindir}/widgettest
 %attr(755,root,root) %{_libdir}/libArk*.so.*.*.*
 
@@ -128,6 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/ark-config
 %attr(755,root,root) %{_libdir}/libArk*.so
 %{_libdir}/libArk*.la
 %{_includedir}/Ark
