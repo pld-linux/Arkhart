@@ -7,7 +7,7 @@ License:	GPL
 Group:		Games
 Source0:	http://arkhart.nekeme.net/Tmp/Ark.tar.bz2
 Source1:	http://arkhart.nekeme.net/Tmp/Arkhart-data.tar.bz2
-Source2:	http://arkhart.nemeke.net/Tmp/Worded.tar.bz2
+Source2:	http://arkhart.nekeme.net/Tmp/Worlded.tar.bz2
 URL:		http://arkhart.nekeme.net/en/?name=Home
 #Patch0:		
 BuildRequires:	lua40-devel >= 4.0.1
