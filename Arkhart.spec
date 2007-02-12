@@ -1,6 +1,6 @@
 %define		editor_ver	0.1.3
 Summary:	Arkhart - A multiplayer roleplaying game
-Summary(pl):	Arkhart - wieloosobowa gra fabularna
+Summary(pl.UTF-8):   Arkhart - wieloosobowa gra fabularna
 Name:		Arkhart
 Version:	0.1.4
 Release:	1
@@ -26,78 +26,78 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Arkhart - A multiplayer roleplaying game.
 
-%description -l pl
+%description -l pl.UTF-8
 Arkhart - wieloosobowa gra fabularna.
 
 %package data
 Summary:	Arkhart data
-Summary(pl):	Dane dla gry Arkhart
+Summary(pl.UTF-8):   Dane dla gry Arkhart
 Group:		X11/Applications/Games
 
 %description data
 Arkhart data.
 
-%description data -l pl
+%description data -l pl.UTF-8
 Dane dla gry Arkhart.
 
 %package server
 Summary:	Arkhart server
-Summary(pl):	Serwer gry Arkhart
+Summary(pl.UTF-8):   Serwer gry Arkhart
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description server
 Arkhart server.
 
-%description server -l pl
+%description server -l pl.UTF-8
 Serwer gry Arkhart.
 
 %package client
 Summary:	Arkhart client
-Summary(pl):	Klient gry Arkhart
+Summary(pl.UTF-8):   Klient gry Arkhart
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description client
 Arkhart client.
 
-%description client -l pl
+%description client -l pl.UTF-8
 Klient gry Arkhart.
 
 %package devel
 Summary:	Arkhart program library headers
-Summary(pl):	Pliki nag丑wkowe gry Arkhart
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe gry Arkhart
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Arkhart program library headers.
 
-%description devel -l pl
-Pliki nag丑wkowe gry Arkhart.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe gry Arkhart.
 
 %package static
 Summary:	Static library for Arkhart games
-Summary(pl):	Biblioteki statyczne dla gry Arkhart
+Summary(pl.UTF-8):   Biblioteki statyczne dla gry Arkhart
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static library for Arkhart games.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne dla gry Arkhart.
 
 %package WorldEd
 Summary:	Arkhart World editor
-Summary(pl):	Edytor 秝iat體 dla gry Arkhart
+Summary(pl.UTF-8):   Edytor 艣wiat贸w dla gry Arkhart
 Group:		X11/Applications/Games
 
 %description WorldEd
 Arkhart World editor.
 
-%description WorldEd -l pl
-Edytor 秝iat體 dla gry Arkhart.
+%description WorldEd -l pl.UTF-8
+Edytor 艣wiat贸w dla gry Arkhart.
 
 %prep
 %setup -q -n ark-%{version}
