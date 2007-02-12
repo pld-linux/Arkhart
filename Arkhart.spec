@@ -1,6 +1,6 @@
 %define		editor_ver	0.1.3
 Summary:	Arkhart - A multiplayer roleplaying game
-Summary(pl.UTF-8):   Arkhart - wieloosobowa gra fabularna
+Summary(pl.UTF-8):	Arkhart - wieloosobowa gra fabularna
 Name:		Arkhart
 Version:	0.1.4
 Release:	1
@@ -31,7 +31,7 @@ Arkhart - wieloosobowa gra fabularna.
 
 %package data
 Summary:	Arkhart data
-Summary(pl.UTF-8):   Dane dla gry Arkhart
+Summary(pl.UTF-8):	Dane dla gry Arkhart
 Group:		X11/Applications/Games
 
 %description data
@@ -42,7 +42,7 @@ Dane dla gry Arkhart.
 
 %package server
 Summary:	Arkhart server
-Summary(pl.UTF-8):   Serwer gry Arkhart
+Summary(pl.UTF-8):	Serwer gry Arkhart
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -54,7 +54,7 @@ Serwer gry Arkhart.
 
 %package client
 Summary:	Arkhart client
-Summary(pl.UTF-8):   Klient gry Arkhart
+Summary(pl.UTF-8):	Klient gry Arkhart
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -66,7 +66,7 @@ Klient gry Arkhart.
 
 %package devel
 Summary:	Arkhart program library headers
-Summary(pl.UTF-8):   Pliki nagłówkowe gry Arkhart
+Summary(pl.UTF-8):	Pliki nagłówkowe gry Arkhart
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -78,7 +78,7 @@ Pliki nagłówkowe gry Arkhart.
 
 %package static
 Summary:	Static library for Arkhart games
-Summary(pl.UTF-8):   Biblioteki statyczne dla gry Arkhart
+Summary(pl.UTF-8):	Biblioteki statyczne dla gry Arkhart
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -90,7 +90,7 @@ Biblioteki statyczne dla gry Arkhart.
 
 %package WorldEd
 Summary:	Arkhart World editor
-Summary(pl.UTF-8):   Edytor światów dla gry Arkhart
+Summary(pl.UTF-8):	Edytor światów dla gry Arkhart
 Group:		X11/Applications/Games
 
 %description WorldEd
